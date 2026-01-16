@@ -143,8 +143,9 @@
             display: none !important;
         }
 
-        .page-number {
-            /* Se quiser manter, teríamos que mudar position fixed para absolute no fim da div, mas geralmente atrapalha */
+        /* OCULTAR TODOS OS ELEMENTOS COM POSITION FIXED (navegação fixa) */
+        .fixed,
+        [class*="fixed"] {
             display: none !important;
         }
 

@@ -7,9 +7,11 @@ async def run():
     html_file_path = os.path.abspath("pdf_version.html")
     file_url = f"file:///{html_file_path.replace(os.path.sep, '/')}"
     
-    output_pdf = "manual_do_aluno.pdf"
-
+    # Caminho absoluto para o PDF de saída
+    output_pdf = os.path.abspath("manual_do_aluno.pdf")
+    
     print(f"Iniciando conversão de: {file_url}")
+    print(f"PDF será salvo em: {output_pdf}")
 
     async with async_playwright() as p:
         # Lança o navegador (Chromium)
