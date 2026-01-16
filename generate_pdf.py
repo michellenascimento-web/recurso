@@ -22,6 +22,27 @@ async def run():
         print("Carregando página...")
         await page.goto(file_url, wait_until="networkidle")
 
+        # IMPORTANTE: Remover todas as classes "hidden" para garantir que os links internos funcionem
+        # O Playwright precisa que os elementos de destino estejam "visíveis" no DOM
+        print("Removendo classes 'hidden' para ativar links...")
+        await page.evaluate("""
+            () => {
+                // Remove a classe 'hidden' de TODOS os elementos
+                document.querySelectorAll('.hidden').forEach(el => {
+                    el.classList.remove('hidden');
+                });
+                
+                // Garante que tudo está visível
+                document.querySelectorAll('[class*="hidden"]').forEach(el => {
+                    el.style.display = 'block';
+                    el.style.visibility = 'visible';
+                    el.style.opacity = '1';
+                });
+                
+                console.log('✅ Classes hidden removidas com sucesso');
+            }
+        """)
+
         # Injeta um CSS extra para garantir que o formato A4 seja respeitado
         # e para ocultar scrollbars que possam aparecer
         await page.add_style_tag(content="""
