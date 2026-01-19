@@ -149,37 +149,31 @@
             display: none !important;
         }
 
-        /* CONFIGURAÇÃO DAS PÁGINAS / QUEBRAS */
+        /* REMOVER QUEBRAS DE PÁGINA - Conteúdo flui naturalmente */
         div[id^="page-"],
         div[id^="lesson-"] {
             display: block !important;
-            break-before: page;
-            page-break-before: always;
+            break-before: auto !important;
+            page-break-before: auto !important;
             width: 100% !important;
             max-width: 100% !important;
-            /* Usar largura total do papel */
             min-height: 0 !important;
-            /* Remove altura mínima de tela */
             height: auto !important;
             margin: 0 auto !important;
-            padding: 2rem !important;
-            /* Margem interna para papel */
+            padding: 1rem !important;
 
             /* Garantir cores vivas */
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
         }
 
-        /* A primeira página não precisa quebrar antes */
-        #page-1 {
-            break-before: auto;
-            page-break-before: auto;
-        }
-        
-        /* Página 7 (Aulas) pode continuar na mesma página que a Introdução */
-        #page-7 {
-            break-before: auto;
-            page-break-before: auto;
+        /* REMOVER CAIXAS BRANCAS - Backgrounds transparentes */
+        .bg-white,
+        .bg-white\/95,
+        [class*="bg-white"] {
+            background: transparent !important;
+            backdrop-filter: none !important;
+            box-shadow: none !important;
         }
 
         /* Ajuste para caber melhor na folha A4 */
@@ -256,7 +250,8 @@
                         Tecnologias Educacionais</h1>
                     <p class="text-xl md:text-2xl text-gray-600 mb-12">Curso para Educadores: uso pedagógico da
                         tecnologia na educação</p><a href="#page-2" id="next-to-page2"
-                        class="bg-gradient-to-r from-green-500 to-blue-600 text-white font-bold text-xl px-12 py-5 rounded-2xl hover:shadow-2xl transition-all transform hover:scale-105" style="display:inline-block; text-align:center; text-decoration:none;">
+                        class="bg-gradient-to-r from-green-500 to-blue-600 text-white font-bold text-xl px-12 py-5 rounded-2xl hover:shadow-2xl transition-all transform hover:scale-105"
+                        style="display:inline-block; text-align:center; text-decoration:none;">
                         Iniciar �� </a>
                 </div>
                 <div class="page-number">
@@ -336,7 +331,8 @@
                     Página 3
                 </div>
                 <div class="fixed bottom-20 right-20 flex gap-4"><a href="#page-2" id="page3-prev"
-                        class="bg-gradient-to-r from-gray-500 to-gray-600 text-white font-bold px-6 py-3 rounded-xl hover:shadow-xl transition-all" style="display:inline-block; text-align:center; text-decoration:none;">
+                        class="bg-gradient-to-r from-gray-500 to-gray-600 text-white font-bold px-6 py-3 rounded-xl hover:shadow-xl transition-all"
+                        style="display:inline-block; text-align:center; text-decoration:none;">
                         �� Anterior </a> <a href="#page-4" id="page3-next"
                         class="bg-gradient-to-r from-green-500 to-blue-600 text-white font-bold px-6 py-3 rounded-xl hover:shadow-xl transition-all inline-block text-center no-underline">
                         Próxima → </a>
@@ -448,7 +444,8 @@
                 <div class="fixed bottom-20 right-20 flex gap-4"><a href="#page-4" id="page5-prev"
                         class="bg-gradient-to-r from-gray-500 to-gray-600 text-white font-bold px-6 py-3 rounded-xl hover:shadow-xl transition-all inline-block text-center no-underline">
                         ← Anterior </a> <a href="#page-6" id="page5-next"
-                        class="bg-gradient-to-r from-green-500 to-blue-600 text-white font-bold px-6 py-3 rounded-xl hover:shadow-xl transition-all" style="display:inline-block; text-align:center; text-decoration:none;">
+                        class="bg-gradient-to-r from-green-500 to-blue-600 text-white font-bold px-6 py-3 rounded-xl hover:shadow-xl transition-all"
+                        style="display:inline-block; text-align:center; text-decoration:none;">
                         Próxima ����� </a>
                 </div>
             </div><!-- ========== PÁGINA 6: INTRODUÇÃO ========== -->
@@ -744,7 +741,9 @@
                         Próxima → </a>
                 </div>
             </div><!-- ========== AULA 01: GOOGLE SALA DE AULA ========== -->
-            <div id="lesson-1" class="hidden max-w-6xl mx-auto pt-8 min-h-screen"><a href="#page-7" class="back-to-page7 mb-6 flex items-center gap-2 text-white/90 hover:text-white font-semibold transition-all" style="display:inline-flex; align-items:center; text-decoration:none;">
+            <div id="lesson-1" class="hidden max-w-6xl mx-auto pt-8 min-h-screen"><a href="#page-7"
+                    class="back-to-page7 mb-6 flex items-center gap-2 text-white/90 hover:text-white font-semibold transition-all"
+                    style="display:inline-flex; align-items:center; text-decoration:none;">
                     <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
@@ -886,12 +885,15 @@
                         </div>
                     </div>
                 </section>
-                <div class="flex justify-between items-center mt-8 pb-8"><a href="#page-5" class="back-to-sumario bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2" style="display:inline-flex; align-items:center; text-decoration:none;">
+                <div class="flex justify-between items-center mt-8 pb-8"><a href="#page-5"
+                        class="back-to-sumario bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2"
+                        style="display:inline-flex; align-items:center; text-decoration:none;">
                         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" />
                         </svg> Sumário </a> <a href="#lesson-2" id="lesson1-next"
-                        class="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2" style="display:inline-flex; align-items:center;">
+                        class="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2"
+                        style="display:inline-flex; align-items:center;">
                         Documentos Google (Próxima →)
                         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
@@ -899,7 +901,9 @@
                         </svg></a>
                 </div>
             </div><!-- ========== AULA 02: DOCUMENTOS GOOGLE ========== -->
-            <div id="lesson-2" class="hidden max-w-6xl mx-auto pt-8 min-h-screen"><a href="#page-7" class="back-to-page7 mb-6 flex items-center gap-2 text-white/90 hover:text-white font-semibold transition-all" style="display:inline-flex; align-items:center; text-decoration:none;">
+            <div id="lesson-2" class="hidden max-w-6xl mx-auto pt-8 min-h-screen"><a href="#page-7"
+                    class="back-to-page7 mb-6 flex items-center gap-2 text-white/90 hover:text-white font-semibold transition-all"
+                    style="display:inline-flex; align-items:center; text-decoration:none;">
                     <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
@@ -1000,12 +1004,15 @@
                         </div>
                     </div>
                 </section>
-                <div class="flex justify-between items-center mt-8 pb-8"><a href="#page-5" class="back-to-sumario bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2" style="display:inline-flex; align-items:center; text-decoration:none;">
+                <div class="flex justify-between items-center mt-8 pb-8"><a href="#page-5"
+                        class="back-to-sumario bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2"
+                        style="display:inline-flex; align-items:center; text-decoration:none;">
                         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" />
                         </svg> Sumário </a> <a href="#lesson-3" id="lesson2-next"
-                        class="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2" style="display:inline-flex; align-items:center;">
+                        class="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2"
+                        style="display:inline-flex; align-items:center;">
                         Google Meet (Próxima →)
                         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
@@ -1013,7 +1020,9 @@
                         </svg></a>
                 </div>
             </div><!-- ========== AULA 03: GOOGLE MEET ========== -->
-            <div id="lesson-3" class="hidden max-w-6xl mx-auto pt-8 min-h-screen"><a href="#page-7" class="back-to-page7 mb-6 flex items-center gap-2 text-white/90 hover:text-white font-semibold transition-all" style="display:inline-flex; align-items:center; text-decoration:none;">
+            <div id="lesson-3" class="hidden max-w-6xl mx-auto pt-8 min-h-screen"><a href="#page-7"
+                    class="back-to-page7 mb-6 flex items-center gap-2 text-white/90 hover:text-white font-semibold transition-all"
+                    style="display:inline-flex; align-items:center; text-decoration:none;">
                     <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
@@ -1100,12 +1109,15 @@
                         </div>
                     </div>
                 </section>
-                <div class="flex justify-between items-center mt-8 pb-8"><a href="#page-5" class="back-to-sumario bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2" style="display:inline-flex; align-items:center; text-decoration:none;">
+                <div class="flex justify-between items-center mt-8 pb-8"><a href="#page-5"
+                        class="back-to-sumario bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2"
+                        style="display:inline-flex; align-items:center; text-decoration:none;">
                         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" />
                         </svg> Sumário </a> <a href="#lesson-4" id="lesson3-next"
-                        class="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2" style="display:inline-flex; align-items:center;">
+                        class="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2"
+                        style="display:inline-flex; align-items:center;">
                         Google Formulários (Próxima →)
                         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
@@ -1113,7 +1125,9 @@
                         </svg></a>
                 </div>
             </div><!-- ========== AULA 04: GOOGLE FORMULÁRIOS ========== -->
-            <div id="lesson-4" class="hidden max-w-6xl mx-auto pt-8 min-h-screen"><a href="#page-7" class="back-to-page7 mb-6 flex items-center gap-2 text-white/90 hover:text-white font-semibold transition-all" style="display:inline-flex; align-items:center; text-decoration:none;">
+            <div id="lesson-4" class="hidden max-w-6xl mx-auto pt-8 min-h-screen"><a href="#page-7"
+                    class="back-to-page7 mb-6 flex items-center gap-2 text-white/90 hover:text-white font-semibold transition-all"
+                    style="display:inline-flex; align-items:center; text-decoration:none;">
                     <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
@@ -1200,12 +1214,15 @@
                         </div>
                     </div>
                 </section>
-                <div class="flex justify-between items-center mt-8 pb-8"><a href="#page-5" class="back-to-sumario bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2" style="display:inline-flex; align-items:center; text-decoration:none;">
+                <div class="flex justify-between items-center mt-8 pb-8"><a href="#page-5"
+                        class="back-to-sumario bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2"
+                        style="display:inline-flex; align-items:center; text-decoration:none;">
                         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" />
                         </svg> Sumário </a> <a href="#lesson-5" id="lesson4-next"
-                        class="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2" style="display:inline-flex; align-items:center;">
+                        class="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2"
+                        style="display:inline-flex; align-items:center;">
                         Drive e Planilhas (Próxima →)
                         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
@@ -1213,7 +1230,9 @@
                         </svg></a>
                 </div>
             </div><!-- ========== AULA 05: DRIVE E PLANILHAS ========== -->
-            <div id="lesson-5" class="hidden max-w-6xl mx-auto pt-8 min-h-screen"><a href="#page-7" class="back-to-page7 mb-6 flex items-center gap-2 text-white/90 hover:text-white font-semibold transition-all" style="display:inline-flex; align-items:center; text-decoration:none;">
+            <div id="lesson-5" class="hidden max-w-6xl mx-auto pt-8 min-h-screen"><a href="#page-7"
+                    class="back-to-page7 mb-6 flex items-center gap-2 text-white/90 hover:text-white font-semibold transition-all"
+                    style="display:inline-flex; align-items:center; text-decoration:none;">
                     <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
@@ -1301,12 +1320,15 @@
                         </div>
                     </div>
                 </section>
-                <div class="flex justify-between items-center mt-8 pb-8"><a href="#page-5" class="back-to-sumario bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2" style="display:inline-flex; align-items:center; text-decoration:none;">
+                <div class="flex justify-between items-center mt-8 pb-8"><a href="#page-5"
+                        class="back-to-sumario bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2"
+                        style="display:inline-flex; align-items:center; text-decoration:none;">
                         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" />
                         </svg> Sumário </a> <a href="#lesson-6" id="lesson5-next"
-                        class="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2" style="display:inline-flex; align-items:center;">
+                        class="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2"
+                        style="display:inline-flex; align-items:center;">
                         Google Apresentações (Próxima →)
                         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
@@ -1314,7 +1336,9 @@
                         </svg></a>
                 </div>
             </div><!-- ========== AULA 06: GOOGLE APRESENTAÇÕES ========== -->
-            <div id="lesson-6" class="hidden max-w-6xl mx-auto pt-8 min-h-screen"><a href="#page-7" class="back-to-page7 mb-6 flex items-center gap-2 text-white/90 hover:text-white font-semibold transition-all" style="display:inline-flex; align-items:center; text-decoration:none;">
+            <div id="lesson-6" class="hidden max-w-6xl mx-auto pt-8 min-h-screen"><a href="#page-7"
+                    class="back-to-page7 mb-6 flex items-center gap-2 text-white/90 hover:text-white font-semibold transition-all"
+                    style="display:inline-flex; align-items:center; text-decoration:none;">
                     <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
@@ -1401,12 +1425,15 @@
                         </div>
                     </div>
                 </section>
-                <div class="flex justify-between items-center mt-8 pb-8"><a href="#page-5" class="back-to-sumario bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2" style="display:inline-flex; align-items:center; text-decoration:none;">
+                <div class="flex justify-between items-center mt-8 pb-8"><a href="#page-5"
+                        class="back-to-sumario bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2"
+                        style="display:inline-flex; align-items:center; text-decoration:none;">
                         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" />
                         </svg> Sumário </a> <a href="#lesson-7" id="lesson6-next"
-                        class="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2" style="display:inline-flex; align-items:center;">
+                        class="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2"
+                        style="display:inline-flex; align-items:center;">
                         Gmail, Keep e Tarefas (Próxima ���)
                         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
@@ -1414,7 +1441,9 @@
                         </svg></a>
                 </div>
             </div><!-- ========== AULA 07: GMAIL, KEEP E TAREFAS ========== -->
-            <div id="lesson-7" class="hidden max-w-6xl mx-auto pt-8 min-h-screen"><a href="#page-7" class="back-to-page7 mb-6 flex items-center gap-2 text-white/90 hover:text-white font-semibold transition-all" style="display:inline-flex; align-items:center; text-decoration:none;">
+            <div id="lesson-7" class="hidden max-w-6xl mx-auto pt-8 min-h-screen"><a href="#page-7"
+                    class="back-to-page7 mb-6 flex items-center gap-2 text-white/90 hover:text-white font-semibold transition-all"
+                    style="display:inline-flex; align-items:center; text-decoration:none;">
                     <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
@@ -1503,12 +1532,15 @@
                         </div>
                     </div>
                 </section>
-                <div class="flex justify-between items-center mt-8 pb-8"><a href="#page-5" class="back-to-sumario bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2" style="display:inline-flex; align-items:center; text-decoration:none;">
+                <div class="flex justify-between items-center mt-8 pb-8"><a href="#page-5"
+                        class="back-to-sumario bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2"
+                        style="display:inline-flex; align-items:center; text-decoration:none;">
                         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" />
                         </svg> Sumário </a> <a href="#lesson-8" id="lesson7-next"
-                        class="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2" style="display:inline-flex; align-items:center;">
+                        class="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2"
+                        style="display:inline-flex; align-items:center;">
                         Chrome e Extensões (Próxima →)
                         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
@@ -1516,7 +1548,9 @@
                         </svg></a>
                 </div>
             </div><!-- ========== AULA 08: CHROME E EXTENSÕES ========== -->
-            <div id="lesson-8" class="hidden max-w-6xl mx-auto pt-8 min-h-screen"><a href="#page-7" class="back-to-page7 mb-6 flex items-center gap-2 text-white/90 hover:text-white font-semibold transition-all" style="display:inline-flex; align-items:center; text-decoration:none;">
+            <div id="lesson-8" class="hidden max-w-6xl mx-auto pt-8 min-h-screen"><a href="#page-7"
+                    class="back-to-page7 mb-6 flex items-center gap-2 text-white/90 hover:text-white font-semibold transition-all"
+                    style="display:inline-flex; align-items:center; text-decoration:none;">
                     <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
@@ -1592,12 +1626,15 @@
                         </div>
                     </div>
                 </section>
-                <div class="flex justify-between items-center mt-8 pb-8"><a href="#page-5" class="back-to-sumario bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2" style="display:inline-flex; align-items:center; text-decoration:none;">
+                <div class="flex justify-between items-center mt-8 pb-8"><a href="#page-5"
+                        class="back-to-sumario bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2"
+                        style="display:inline-flex; align-items:center; text-decoration:none;">
                         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" />
                         </svg> Sumário </a> <a href="#lesson-9" id="lesson8-next"
-                        class="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2" style="display:inline-flex; align-items:center;">
+                        class="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2"
+                        style="display:inline-flex; align-items:center;">
                         Google Sites (Próxima →)
                         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
@@ -1605,7 +1642,9 @@
                         </svg></a>
                 </div>
             </div><!-- ========== AULA 09: GOOGLE SITES ========== -->
-            <div id="lesson-9" class="hidden max-w-6xl mx-auto pt-8 min-h-screen"><a href="#page-7" class="back-to-page7 mb-6 flex items-center gap-2 text-white/90 hover:text-white font-semibold transition-all" style="display:inline-flex; align-items:center; text-decoration:none;">
+            <div id="lesson-9" class="hidden max-w-6xl mx-auto pt-8 min-h-screen"><a href="#page-7"
+                    class="back-to-page7 mb-6 flex items-center gap-2 text-white/90 hover:text-white font-semibold transition-all"
+                    style="display:inline-flex; align-items:center; text-decoration:none;">
                     <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
@@ -1693,12 +1732,15 @@
                         </div>
                     </div>
                 </section>
-                <div class="flex justify-between items-center mt-8 pb-8"><a href="#page-5" class="back-to-sumario bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2" style="display:inline-flex; align-items:center; text-decoration:none;">
+                <div class="flex justify-between items-center mt-8 pb-8"><a href="#page-5"
+                        class="back-to-sumario bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2"
+                        style="display:inline-flex; align-items:center; text-decoration:none;">
                         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" />
                         </svg> Sumário </a> <a href="#lesson-10" id="lesson9-next"
-                        class="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2" style="display:inline-flex; align-items:center;">
+                        class="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2"
+                        style="display:inline-flex; align-items:center;">
                         Certificação Google (Próxima →)
                         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
@@ -1706,7 +1748,9 @@
                         </svg></a>
                 </div>
             </div><!-- ========== AULA 10: CERTIFICAÇÃO GOOGLE ========== -->
-            <div id="lesson-10" class="hidden max-w-6xl mx-auto pt-8 min-h-screen"><a href="#page-7" class="back-to-page7 mb-6 flex items-center gap-2 text-white/90 hover:text-white font-semibold transition-all" style="display:inline-flex; align-items:center; text-decoration:none;">
+            <div id="lesson-10" class="hidden max-w-6xl mx-auto pt-8 min-h-screen"><a href="#page-7"
+                    class="back-to-page7 mb-6 flex items-center gap-2 text-white/90 hover:text-white font-semibold transition-all"
+                    style="display:inline-flex; align-items:center; text-decoration:none;">
                     <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
@@ -1798,7 +1842,9 @@
                         </div>
                     </div>
                 </section>
-                <div class="flex justify-between items-center mt-8 pb-8"><a href="#page-5" class="back-to-sumario bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2" style="display:inline-flex; align-items:center; text-decoration:none;">
+                <div class="flex justify-between items-center mt-8 pb-8"><a href="#page-5"
+                        class="back-to-sumario bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2"
+                        style="display:inline-flex; align-items:center; text-decoration:none;">
                         <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" />
@@ -1870,9 +1916,11 @@
                     Página 8
                 </div>
                 <div class="fixed bottom-20 right-20 flex gap-4"><a href="#page-7" id="page8-prev"
-                        class="bg-gradient-to-r from-gray-500 to-gray-600 text-white font-bold px-6 py-3 rounded-xl hover:shadow-xl transition-all" style="display:inline-block; text-align:center; text-decoration:none;">
+                        class="bg-gradient-to-r from-gray-500 to-gray-600 text-white font-bold px-6 py-3 rounded-xl hover:shadow-xl transition-all"
+                        style="display:inline-block; text-align:center; text-decoration:none;">
                         ← Anterior </a> <a href="#page-9" id="page8-next"
-                        class="bg-gradient-to-r from-green-500 to-blue-600 text-white font-bold px-6 py-3 rounded-xl hover:shadow-xl transition-all" style="display:inline-block; text-align:center; text-decoration:none;">
+                        class="bg-gradient-to-r from-green-500 to-blue-600 text-white font-bold px-6 py-3 rounded-xl hover:shadow-xl transition-all"
+                        style="display:inline-block; text-align:center; text-decoration:none;">
                         Próxima → </a>
                 </div>
             </div><!-- ========== PÁGINA 9: REFERÊNCIAS ========== -->
@@ -1940,9 +1988,11 @@
                     Página 9
                 </div>
                 <div class="fixed bottom-20 right-20 flex gap-4"><a href="#page-8" id="page9-prev"
-                        class="bg-gradient-to-r from-gray-500 to-gray-600 text-white font-bold px-6 py-3 rounded-xl hover:shadow-xl transition-all" style="display:inline-block; text-align:center; text-decoration:none;">
+                        class="bg-gradient-to-r from-gray-500 to-gray-600 text-white font-bold px-6 py-3 rounded-xl hover:shadow-xl transition-all"
+                        style="display:inline-block; text-align:center; text-decoration:none;">
                         ← Anterior </a> <a href="#page-10" id="page9-next"
-                        class="bg-gradient-to-r from-green-500 to-blue-600 text-white font-bold px-6 py-3 rounded-xl hover:shadow-xl transition-all" style="display:inline-block; text-align:center; text-decoration:none;">
+                        class="bg-gradient-to-r from-green-500 to-blue-600 text-white font-bold px-6 py-3 rounded-xl hover:shadow-xl transition-all"
+                        style="display:inline-block; text-align:center; text-decoration:none;">
                         Próxima → </a>
                 </div>
             </div><!-- ========== PÁGINA 10: FOLHA EM BRANCO ========== -->
@@ -1954,9 +2004,11 @@
                     Página 10
                 </div>
                 <div class="fixed bottom-20 right-20 flex gap-4"><a href="#page-9" id="page10-prev"
-                        class="bg-gradient-to-r from-gray-500 to-gray-600 text-white font-bold px-6 py-3 rounded-xl hover:shadow-xl transition-all" style="display:inline-block; text-align:center; text-decoration:none;">
+                        class="bg-gradient-to-r from-gray-500 to-gray-600 text-white font-bold px-6 py-3 rounded-xl hover:shadow-xl transition-all"
+                        style="display:inline-block; text-align:center; text-decoration:none;">
                         ← Anterior </a> <a href="#page-11" id="page10-next"
-                        class="bg-gradient-to-r from-green-500 to-blue-600 text-white font-bold px-6 py-3 rounded-xl hover:shadow-xl transition-all" style="display:inline-block; text-align:center; text-decoration:none;">
+                        class="bg-gradient-to-r from-green-500 to-blue-600 text-white font-bold px-6 py-3 rounded-xl hover:shadow-xl transition-all"
+                        style="display:inline-block; text-align:center; text-decoration:none;">
                         Próxima → </a>
                 </div>
             </div><!-- ========== PÁGINA 11: CONTRACAPA ========== -->
@@ -2036,7 +2088,8 @@
                     Página 11
                 </div>
                 <div class="fixed bottom-20 right-20 flex gap-4"><a href="#page-10" id="page11-prev"
-                        class="bg-gradient-to-r from-gray-500 to-gray-600 text-white font-bold px-6 py-3 rounded-xl hover:shadow-xl transition-all" style="display:inline-block; text-align:center; text-decoration:none;">
+                        class="bg-gradient-to-r from-gray-500 to-gray-600 text-white font-bold px-6 py-3 rounded-xl hover:shadow-xl transition-all"
+                        style="display:inline-block; text-align:center; text-decoration:none;">
                         ← Anterior </a> <button id="page11-to-start"
                         class="bg-gradient-to-r from-green-500 to-blue-600 text-white font-bold px-6 py-3 rounded-xl hover:shadow-xl transition-all">
                         🏠 Voltar ao Início </button>
@@ -2262,4 +2315,3 @@
 </body>
 
 </html>
-

@@ -1,5 +1,6 @@
 import os
 import asyncio
+from datetime import datetime
 from playwright.async_api import async_playwright
 
 async def run():
@@ -7,8 +8,14 @@ async def run():
     html_file_path = os.path.abspath("pdf_version.html")
     file_url = f"file:///{html_file_path.replace(os.path.sep, '/')}"
     
-    # Caminho absoluto para o PDF de saída
-    output_pdf = os.path.abspath("manual_do_aluno.pdf")
+    # Criar pasta pdf/ se não existir
+    pdf_dir = os.path.abspath("pdf")
+    os.makedirs(pdf_dir, exist_ok=True)
+    
+    # Gerar nome do arquivo com timestamp
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_filename = f"manual_do_aluno_{timestamp}.pdf"
+    output_pdf = os.path.join(pdf_dir, output_filename)
     
     print(f"Iniciando conversão de: {file_url}")
     print(f"PDF será salvo em: {output_pdf}")
