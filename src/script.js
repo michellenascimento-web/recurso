@@ -104,10 +104,16 @@ document.getElementById('page6-next')?.addEventListener('click', () => showPage(
 
 // Página 7 navegação
 document.getElementById('page7-prev')?.addEventListener('click', () => showPage('page-6'));
-document.getElementById('page7-next')?.addEventListener('click', () => showPage('page-8'));
+const btnPage7Next = document.getElementById('page7-next');
+if (btnPage7Next) {
+    btnPage7Next.addEventListener('click', () => {
+        showPage('lesson-1');
+    });
+}
+// document.getElementById('page7-next')?.addEventListener('click', () => showPage('lesson-1')); // Removido para usar versão mais robusta acima
 
 // Página 8 navegação
-document.getElementById('page8-prev')?.addEventListener('click', () => showPage('page-7'));
+document.getElementById('page8-prev')?.addEventListener('click', () => showPage('page-7')); // Ajustar se necessário, mas Page 8 é o fim
 document.getElementById('page8-next')?.addEventListener('click', () => showPage('page-9'));
 
 // Página 9 navegação
@@ -202,8 +208,12 @@ document.getElementById('lesson9-next')?.addEventListener('click', () => {
     completeLesson(9);
     showPage('lesson-10');
 });
-document.getElementById('lesson10-to-page8')?.addEventListener('click', () => {
+document.getElementById('lesson10-next')?.addEventListener('click', () => {
     completeLesson(10);
+    showPage('lesson-11');
+});
+document.getElementById('lesson11-to-page8')?.addEventListener('click', () => {
+    // completeLesson(11); // Se Aula 11 for "completável"
     showPage('page-8');
 });
 
