@@ -9,6 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../src/styles.css">
     <script src="../src/script.js" defer></script>
+    <script src="../src/dados_ficha.js" defer></script>
 </head>
 
 <body class="h-full">
@@ -24,18 +25,15 @@
                         <div class="catalog-box"
                             style="font-family: Arial, sans-serif; font-size: 12px; line-height: 1.6;">
                             <div class="text-center">
-                                <p class="mb-4">Nascimento, Michelle Santos<br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Educação Física escolar e Tecnologia
-                                    Educacional: uma reflexão sobre o uso das ferramentas educacionais google no ensino
-                                    dos jogos e a formação continuada do professor/Michelle Santos do Nascimento. –
-                                    Muzambinho/MG<br>
-                                    xxx f : il. ; XX cm + X Tipo (XX p./il./XX cm/son., color.)</p>
-                                <p class="mb-4">Modo de acesso: http://www....</p>
-                                <p class="mb-4">Orientador(a): Prof. Dr. Evandro Antonio Corrêa</p>
-                                <p class="mb-4">Dissertação (Mestrado) – Programa de Mestrado Profissional em Educação
-                                    Física em Rede Nacional – ProEF do Instituto Federal do Sul de Minas, Muzambinho,
-                                    2026.</p>
-                                <p>1 Descritor. 2. Descritor. 3 . Descritor. I. Autor II. Título.</p>
+                                <p class="mb-4">
+                                    <span id="ficha-autor"></span><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="ficha-texto"></span>
+                                </p>
+                                <p class="mb-4" id="ficha-descricao"></p>
+                                <p class="mb-4" id="ficha-acesso"></p>
+                                <p class="mb-4" id="ficha-orientador"></p>
+                                <p class="mb-4" id="ficha-dissertacao"></p>
+                                <p id="ficha-descritores"></p>
                             </div>
                         </div>
                     </div>
