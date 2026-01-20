@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-BR" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 02 - Documentos Google</title>
+    <script src="../../../_sdk/element_sdk.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../src/styles.css">
+    <script src="../../src/script.js" defer></script>
+</head>
+
+<body class="h-full">
+    <div id="app-wrapper" class="w-full h-full gradient-bg classroom-pattern overflow-auto">
+        <div class="min-h-full py-8 px-4 md:px-8">
+            <div id="lesson-2" class="max-w-6xl mx-auto pt-8 min-h-screen">
+                <a href="../../pages/07_menu_aulas.html"
+                    class="mb-6 flex items-center gap-2 text-white/90 hover:text-white font-semibold transition-all no-underline">
+                    <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    Voltar para Aulas
+                </a>
+
+                <header class="mb-8 fade-in">
+                    <div class="bg-white/95 backdrop-blur rounded-2xl p-6 md:p-8 shadow-xl">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="bg-blue-500 p-4 rounded-xl">
+                                <svg width="40" height="40" viewbox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="white"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                    <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="white" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <div class="text-sm font-semibold text-blue-600 mb-1">
+                                    AULA 02
+                                </div>
+                                <h1 class="text-3xl md:text-4xl font-bold text-gray-800">Documentos Google e Gemini</h1>
+                                <p class="text-xl text-gray-600 mt-2">Trabalhe de forma colaborativa com Documentos
+                                    Google e Gemini</p>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <section class="mb-8 fade-in">
+                    <div class="bg-white/95 backdrop-blur rounded-2xl p-6 md:p-8 shadow-xl">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3"><span
+                                class="text-3xl">📚</span> Recursos Oficiais - Documentos Google</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <a href="https://support.google.com/docs/answer/7068618?hl=en&co=GENIE.Platform%3DiOS&sjid=13638401911549597839-SA"
+                                target="_blank" rel="noopener noreferrer"
+                                class="group bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-xl p-5 block transition-all transform hover:scale-105 shadow-lg hover:shadow-xl no-underline">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="text-3xl">📄</div>
+                                    <h3 class="font-bold text-lg">Criar e Nomear Documentos</h3>
+                                </div>
+                                <p class="text-sm text-blue-100 mb-3">Como iniciar e organizar seus documentos</p>
+                                <div class="text-xs text-blue-200">Clique para acessar o guia oficial →</div>
+                            </a>
+                            <a href="https://support.google.com/docs/answer/45893?hl=en&ref_topic=9045931"
+                                target="_blank" rel="noopener noreferrer"
+                                class="group bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white rounded-xl p-5 block transition-all transform hover:scale-105 shadow-lg hover:shadow-xl no-underline">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="text-3xl">🔗</div>
+                                    <h3 class="font-bold text-lg">Trabalhar com links e favoritos</h3>
+                                </div>
+                                <p class="text-sm text-purple-100 mb-3">Usar links e marcadores</p>
+                                <div class="text-xs text-purple-200">Clique para acessar o guia oficial →</div>
+                            </a>
+                            <a href="https://support.google.com/docs/answer/65129" target="_blank"
+                                rel="noopener noreferrer"
+                                class="group bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-xl p-5 block transition-all transform hover:scale-105 shadow-lg hover:shadow-xl no-underline">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="text-3xl">💬</div>
+                                    <h3 class="font-bold text-lg">Usar o recurso de comentários</h3>
+                                </div>
+                                <p class="text-sm text-green-100 mb-3">Use comentários, itens de ação e reações com
+                                    emojis</p>
+                                <div class="text-xs text-green-200">Clique para acessar o guia oficial →</div>
+                            </a>
+                            <a href="https://support.google.com/docs/answer/10710316?hl=en" target="_blank"
+                                rel="noopener noreferrer"
+                                class="group bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white rounded-xl p-5 block transition-all transform hover:scale-105 shadow-lg hover:shadow-xl no-underline">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="text-3xl">📌</div>
+                                    <h3 class="font-bold text-lg">Usar chips inteligentes</h3>
+                                </div>
+                                <p class="text-sm text-pink-100 mb-3">Insira chips inteligentes no seu Google Docs</p>
+                                <div class="text-xs text-pink-200">Clique para acessar o guia oficial →</div>
+                            </a>
+                            <a href="https://support.google.com/docs/answer/10540294?hl=en" target="_blank"
+                                rel="noopener noreferrer"
+                                class="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-xl p-5 block transition-all transform hover:scale-105 shadow-lg hover:shadow-xl no-underline">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="text-3xl">📺</div>
+                                    <h3 class="font-bold text-lg">Apresentar um documento</h3>
+                                </div>
+                                <p class="text-sm text-orange-100 mb-3">Apresente diretamente em uma reunião</p>
+                                <div class="text-xs text-orange-200">Clique para acessar o guia oficial →</div>
+                            </a>
+                            <a href="https://support.google.com/docs/answer/13952129?hl=en&co=DASHER._Family%3DEducation&sjid=9310878704056144226-SA"
+                                target="_blank" rel="noopener noreferrer"
+                                class="group bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-600 hover:to-indigo-700 text-white rounded-xl p-5 block transition-all transform hover:scale-105 shadow-lg hover:shadow-xl no-underline">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="text-3xl">🤖</div>
+                                    <h3 class="font-bold text-lg">Utilizar o Gemini na educação</h3>
+                                </div>
+                                <p class="text-sm text-indigo-100 mb-3">Assistência de IA para escrita e edição</p>
+                                <div class="text-xs text-indigo-200">Clique para acessar o guia oficial →</div>
+                            </a>
+                            <a href="https://support.google.com/docs/answer/6388102?hl=pt-BR&co=GENIE.Platform%3DDesktop"
+                                target="_blank" rel="noopener noreferrer"
+                                class="group bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white rounded-xl p-5 block transition-all transform hover:scale-105 shadow-lg hover:shadow-xl no-underline">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="text-3xl">📴</div>
+                                    <h3 class="font-bold text-lg">Usar documento offline</h3>
+                                </div>
+                                <p class="text-sm text-teal-100 mb-3">Edite, veja ou crie seus arquivos offline</p>
+                                <div class="text-xs text-teal-200">Clique para acessar o guia oficial →</div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="flex justify-between items-center mt-8 pb-8">
+                    <a href="../../pages/05_sumario.html"
+                        class="back-to-sumario bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2 no-underline">
+                        <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                        Sumário
+                    </a>
+                    <button id="btn-complete-lesson" data-lesson="2"
+                        onclick="completeLesson(2); setTimeout(() => window.location.href='../../aulas/aula03/index.html', 300)"
+                        class="bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all flex items-center gap-2 cursor-pointer border-none">
+                        Google Meet
+                        <svg width="20" height="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
