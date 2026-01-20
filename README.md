@@ -25,6 +25,10 @@ O objetivo é promover o uso pedagógico da tecnologia na educação física esc
 Para rodar este projeto em sua máquina:
 
 ```bash
+
+
+git clone https://github.com/michellenascimento-web/recurso.git
+cd recurso
 # Instale e execute o servidor local
 npx http-server -p 8080
 ```
