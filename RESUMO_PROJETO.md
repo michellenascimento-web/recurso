@@ -5,7 +5,7 @@ Recurso Educacional Digital (RED) voltado para educadores, focado no uso pedagó
 
 ---
 
-## ✅ Estrutura do Projeto (v2.0)
+## ✅ Estrutura do Projeto (v1.0)
 
 O projeto foi reestruturado para melhor organização e integridade:
 
@@ -52,7 +52,7 @@ python tools/run_all_tests.py
 ---
 
 ## � Status Atual
-- **Versão**: 2.0 (Estável)
+- **Versão**: 1.0 (Estável)
 - **Cobertura de Testes**: 100% (Integridade estrutural e navegação)
 - **Erros de Console**: 0 (Zero 404s)
 
