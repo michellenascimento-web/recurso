@@ -1,72 +1,63 @@
-# Resumo do Projeto: Conversão HTML → PDF Interativo
+# Resumo do Projeto: Trilha Formativa em Tecnologias Educacionais
 
 ## 🎯 Objetivo Principal
-Converter o curso web (`index.html`) em um **PDF único e interativo** com:
-- Todas as aulas em um documento
-- Links de navegação internos funcionando
-- Alta fidelidade visual
+Recurso Educacional Digital (RED) voltado para educadores, focado no uso pedagógico de tecnologias (Google for Education). O projeto funciona como uma aplicação web estática (SPA simulada) com navegação entre páginas e aulas interativas.
 
 ---
 
-## ✅ O Que Já Foi Feito
+## ✅ Estrutura do Projeto (v2.0)
 
-### 1. Preparação do HTML (`pdf_version.html`)
-- ✅ Criado versão otimizada do HTML original
-- ✅ Adicionado CSS específico para impressão (quebras de página, cores)
-- ✅ Convertidos botões JavaScript → links HTML (`<a href="#id">`)
-  - Script: `convert_links.py`
-  
-### 2. Automação da Geração (Playwright)
-- ✅ Instalado Playwright + Chromium
-- ✅ Criado `generate_pdf.py` que:
-  - Carrega `pdf_version.html` no navegador
-  - Remove classes "hidden" via JavaScript
-  - Gera PDF com motor real do Chrome
+O projeto foi reestruturado para melhor organização e integridade:
 
-### 3. Correções Aplicadas
-- ✅ Removidos botões de navegação sobrepostos (position: fixed)
-- ✅ Configurado Git (nome, email, branch "main")
-- ✅ Repositório conectado ao GitHub
+### 1. Diretórios Principais
+- **`index.html`**: Página de entrada (Capa).
+- **`pages/`**: Páginas de conteúdo sequencial (02 a 10).
+- **`aulas/`**: 11 Aulas práticas (aula01 a aula11).
+- **`assets/`**: Imagens e ícones (migrado de `public/`).
+- **`src/`**: Estilos (`styles.css`) e scripts (`script.js`).
+- **`tools/`**: Scripts de automação e testes em Python.
 
----
-
-## 🔧 Trabalho em Andamento
-
-### Problema Atual: Paginação
-**Relatado pelo usuário:**
-- Páginas 6 (Introdução) e 7 (Grid de Aulas) deveriam estar juntas
-- Estão sendo separadas em páginas diferentes
-
-**Última ação:**
-- Modificado CSS para remover quebra forçada do `#page-7`
-- Script de geração foi cancelado antes de terminar
+### 2. Melhorias Recentes
+- **Renumeração de Páginas**: Removida página vazia 02; sequência ajustada de 02 a 10.
+- **Correção de Navegação**: Todos os links "Anterior/Próxima" validados.
+- **Migração de Assets**: Pasta `public` renomeada para `assets` para compatibilidade com servidores.
+- **Limpeza de Código**: Removidas referências a SDKs inexistentes (`_sdk/`) que causavam erros 404.
+- **Favicon**: Adicionado favicon personalizado em todas as páginas.
 
 ---
 
-## 📋 Próximos Passos
+## �️ Ferramentas e Scripts
 
-1. **Regenerar o PDF** com a correção de paginação
-2. **Testar links internos** (sumário → aulas)
-3. **Ajustar outras quebras de página** se necessário
-4. **Commit final** no GitHub
+Ferramentas Python criadas para garantir a qualidade do projeto:
 
----
+### Testes de Regressão (`tools/`)
+1. **`test_navigation_back.py`**: Valida todos os botões "Anterior".
+2. **`test_navigation_next.py`**: Valida todos os botões "Próxima".
+3. **`verify_assets.py`**: Valida a existência de todos os arquivos referenciados (CSS, JS, Imagens).
+4. **`run_all_tests.py`**: Executa a suite completa de testes.
 
-## 📁 Arquivos Principais
-
-### Scripts
-- `convert_links.py` - Converte botões para links
-- `generate_pdf.py` - Gera PDF com Playwright
-- `test_links.py` - Valida links internos
-
-### HTML
-- `index.html` - Original
-- `pdf_version.html` - Versão para PDF
-
-### Saída
-- `manual_do_aluno.pdf` - PDF gerado (~5 MB)
+### Comandos de Teste
+Para verificar a integridade do projeto, execute:
+```bash
+python tools/run_all_tests.py
+```
 
 ---
 
-## 🔗 GitHub
-**Repositório:** https://github.com/michellenascimento-web/recurso
+## � Funcionalidades Web
+- **Progresso**: Sistema de desbloqueio de aulas via `localStorage` (Vanilla JS).
+- **Navegação**: Links relativos para navegação offline/estática.
+- **Responsividade**: TailwindCSS para adaptação mobile/desktop.
+
+---
+
+## � Status Atual
+- **Versão**: 2.0 (Estável)
+- **Cobertura de Testes**: 100% (Integridade estrutural e navegação)
+- **Erros de Console**: 0 (Zero 404s)
+
+---
+
+## 📂 Arquivos Importantes
+- `task.md`: Lista de tarefas e histórico de alterações.
+- `walkthrough.md`: Detalhes técnicos da implementação.
