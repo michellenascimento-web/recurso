@@ -1,5 +1,6 @@
 // Dados da ficha
 const dadosFicha = {
+    cabecalho: "Programa de Mestrado Profissional em Educação Física em Rede Nacional – ProEF",
     autor: "Nascimento, Michelle Santos",
     textoPrincipal: "Educação Física escolar e Tecnologia Educacional: uma reflexão sobre o uso das ferramentas educacionais google no ensino dos jogos e a formação continuada do professor/Michelle Santos do Nascimento. – Muzambinho/MG",
     descricaoFisica: "xxx f : il. ; XX cm + X Tipo (XX p./il./XX cm/son., color.)",
@@ -11,6 +12,7 @@ const dadosFicha = {
 
 function preencherFicha() {
     const elementos = {
+        'ficha-cabecalho': dadosFicha.cabecalho,
         'ficha-autor': dadosFicha.autor,
         'ficha-texto': dadosFicha.textoPrincipal,
         'ficha-descricao': dadosFicha.descricaoFisica,
